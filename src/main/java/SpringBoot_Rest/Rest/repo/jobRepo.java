@@ -40,4 +40,9 @@ public class jobRepo {
         }
         return null;
     }
+
+    public JobPost updateJob(JobPost j) {
+
+        return j;
+    }
 }

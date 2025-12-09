@@ -27,4 +27,8 @@ public class jobController {
     public void addJob(@RequestBody JobPost j) {
         js.addJob(j);
     }
+
+    public JobPost updateJob(@RequestBody JobPost j) {
+        return js.updateJob(j);
+    }
 }
