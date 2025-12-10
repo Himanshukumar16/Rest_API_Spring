@@ -42,7 +42,14 @@ public class jobRepo {
     }
 
     public JobPost updateJob(JobPost j) {
-
+        for (JobPost jp : jobs) {
+            if (jp.getPostId() == j.getPostId()) {
+                jp.setPostDesc(j.getPostDesc());
+                jp.setPostProfile(j.getPostProfile());
+                jp.setReqExperience(j.getReqExperience());
+                jp.setPostTechStack(j.getPostTechStack());
+            }
+        }
         return j;
     }
 }
