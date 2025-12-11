@@ -23,12 +23,19 @@ public class jobController {
         return js.getjob(id);
     }
 
-    @PostMapping("jobposts")
+    @PostMapping("jobpost")
     public void addJob(@RequestBody JobPost j) {
         js.addJob(j);
     }
 
-    public JobPost updateJob(@RequestBody JobPost j) {
-        return js.updateJob(j);
+    @PutMapping("jobpost")
+    public void updateJob(@RequestBody JobPost j) {
+        js.updateJob(j);
+    }
+
+    @DeleteMapping("jobpost/{id}")
+    public String deleteJob(@PathVariable int id) {
+        js.deleteJob(id);
+        return "Deleted";
     }
 }

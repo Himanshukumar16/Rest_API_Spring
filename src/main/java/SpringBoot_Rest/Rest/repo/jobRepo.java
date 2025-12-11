@@ -41,7 +41,7 @@ public class jobRepo {
         return null;
     }
 
-    public JobPost updateJob(JobPost j) {
+    public void updateJob(JobPost j) {
         for (JobPost jp : jobs) {
             if (jp.getPostId() == j.getPostId()) {
                 jp.setPostDesc(j.getPostDesc());
@@ -50,6 +50,9 @@ public class jobRepo {
                 jp.setPostTechStack(j.getPostTechStack());
             }
         }
-        return j;
+    }
+
+    public void deleteJob(int id) {
+        jobs.removeIf(job -> job.getPostId() == id);
     }
 }
