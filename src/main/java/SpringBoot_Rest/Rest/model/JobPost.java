@@ -1,13 +1,16 @@
 package SpringBoot_Rest.Rest.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Entity
+@Scope("prototype")
 @Component
 public class JobPost {
-
-    public JobPost() {}
 
     public JobPost(int postId, String postProfile, String postDesc, int reqExperience, List<String> postTechStack) {
         this.postId = postId;
@@ -17,6 +20,9 @@ public class JobPost {
         this.postTechStack = postTechStack;
     }
 
+    public JobPost() {}
+
+    @Id
     private int postId;
     private String postProfile;
     private String postDesc;

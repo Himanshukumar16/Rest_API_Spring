@@ -38,4 +38,10 @@ public class jobController {
         js.deleteJob(id);
         return "Deleted";
     }
+
+    @GetMapping("load")
+    public String loadJob(){
+        js.load();
+        return "Loaded !";
+    }
 }
