@@ -52,4 +52,12 @@ public class jobService {
 
         repo.saveAll(jobs);
     }
+
+    public List<JobPost> search(String key) {
+        return repo.findByPostProfileContainingOrPostDescContaining(key,key);
+    }
+
+    public List<JobPost> searchExp(String key) {
+        return repo.findByReqExperience(key);
+    }
 }

@@ -39,6 +39,16 @@ public class jobController {
         return "Deleted";
     }
 
+    @GetMapping("jobpost/keyword/{key}")
+    public List<JobPost> findByKeyword(@PathVariable String key) {
+        return js.search(key);
+    }
+
+    @GetMapping("jobpost/exp/{key}")
+    public List<JobPost> findByExp(@PathVariable String key) {
+        return js.searchExp(key);
+    }
+
     @GetMapping("load")
     public String loadJob(){
         js.load();
