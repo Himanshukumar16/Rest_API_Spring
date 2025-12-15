@@ -35,7 +35,7 @@ public class jobService {
         repo.deleteById(id);
     }
 
-    public void load() {
+    public List<JobPost> load() {
 
         List<JobPost> jobs = new ArrayList<>(Arrays.asList(
                 new JobPost(1, "Java Developer", "Must have good experience in core Java and advanced Java", 2,
@@ -49,8 +49,8 @@ public class jobService {
                 new JobPost(5, "Mobile App Developer", "Experience in mobile app development for iOS and Android", 3,
                         List.of("iOS Development", "Android Development", "Mobile App"))
         ));
-
         repo.saveAll(jobs);
+        return jobs;
     }
 
     public List<JobPost> search(String key) {

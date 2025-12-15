@@ -50,8 +50,8 @@ public class jobController {
     }
 
     @GetMapping("load")
-    public String loadJob(){
+    public List<JobPost> loadJob(){
         js.load();
-        return "Loaded !";
+        return js.load();
     }
 }
